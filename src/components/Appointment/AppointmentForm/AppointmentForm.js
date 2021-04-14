@@ -133,49 +133,6 @@ const AppointmentForm = ({ modalIsOpen, closeModal, appointSubject, date }) => {
             </button>
           </div>
         </form>
-        {/* <form onSubmit={handleSubmit(onSubmit)}>
-          <input type="time" {...register("Time", { required: true })} />
-          {errors.Time && (
-            <span className="text-danger">
-              Patient Appoint Time is Required*
-            </span>
-          )}{" "}
-          <br />
-          <input
-            {...register("userName", { required: true })}
-            placeholder="Patient Name"
-          />
-          {errors.userName && (
-            <span className="text-danger">Patient Name is Required*</span>
-          )}
-          <br />
-          <input
-            {...register("userPhone", { required: true })}
-            placeholder="Patient Phone"
-          />
-          {errors.userPhone && (
-            <span className="text-danger">Patient phone is Required*</span>
-          )}
-          <br />
-          <input
-            type="email"
-            {...register("userMain", { required: true })}
-            placeholder="Patient Email"
-          />
-          {errors.userMain && (
-            <span className="text-danger">Patient Email is Required*</span>
-          )}
-          <br />
-          <input type="date" {...register("useDate", { required: true })} />
-          {errors.useDate && (
-            <span className="text-danger">
-              Patient Appoint date is Required*
-            </span>
-          )}
-          <br />
-          <input type="submit" />
-          <button onClick={closeModal}>close</button>
-        </form> */}
       </Modal>
     </div>
   );

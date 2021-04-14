@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import AppointmentsByDate from "../AppointmentsByDate/AppointmentsByDate";
 import Sidebar from "../Sidebar/Sidebar";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { useEffect } from "react";
+import Navbar from "../../Shared/Navbar/Navbar";
+import { UserContext } from "../../../App";
 
 const containerStyle = {
   //   position: "absolute",
@@ -12,6 +14,7 @@ const containerStyle = {
   height: "100%",
 };
 const Dashboard = () => {
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [appointments, setAppointments] = useState([]);
   const handleChange = (date) => {
@@ -21,7 +24,7 @@ const Dashboard = () => {
     fetch("http://localhost:5000/appointmentsByDate", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ date: selectedDate }),
+      body: JSON.stringify({ date: selectedDate, email: loggedInUser.email }),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -32,6 +35,9 @@ const Dashboard = () => {
   return (
     <main>
       <section>
+        <div className="container-fluid bg-danger">
+          <Navbar></Navbar>
+        </div>
         <div style={containerStyle} className="container-fluid row">
           <div className="col-md-2">
             <Sidebar />

@@ -30,13 +30,13 @@ const Navbar = () => {
                 </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link me-5" to="/service">
-                  Dental Service
+                <Link class="nav-link me-5" to="/dashboard">
+                  Doctor Dashboard
                 </Link>
               </li>
               <li class="nav-item">
-                <Link class="nav-link me-5 text-white" to="/review">
-                  Reviews
+                <Link class="nav-link me-5 text-white" to="/admin">
+                  Admin
                 </Link>
               </li>
               <li class="nav-item">

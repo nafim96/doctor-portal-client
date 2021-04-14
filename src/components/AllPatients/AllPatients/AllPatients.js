@@ -4,22 +4,28 @@ import Sidebar from "../../Dashboard/Sidebar/Sidebar";
 
 const AllPatients = () => {
   const [appointments, setAppointments] = useState([]);
-
+  console.log("get data from all patient", appointments);
   useEffect(() => {
     fetch("http://localhost:5000/appointments")
       .then((res) => res.json())
-      .then((data) => setAppointments(data));
+      .then((data) => {
+        setAppointments(data);
+        console.log(data);
+      });
   }, []);
 
   return (
     <div className="container-fluid row ">
-      <Sidebar></Sidebar>
+      <div className="col-md-2">
+        <Sidebar></Sidebar>
+      </div>
       <div
-        className="col-md-10 p-4 pr-5"
+        className="col-md-10 p-4"
         style={{ position: "absolute", right: 0, backgroundColor: "#F4FDFB" }}
       >
         <h5 className="text-brand">All Patients</h5>
-        <AppointmentDataTable appointments={appointments} />
+
+        <AppointmentDataTable appointment={appointments} />
       </div>
     </div>
   );

@@ -4,6 +4,7 @@ import "./App.css";
 import AddDoctor from "./components/AddDoctor/AddDoctor";
 import AllPatients from "./components/AllPatients/AllPatients/AllPatients";
 import Appointment from "./components/Appointment/Appointment/Appointment";
+import AppointmentDataTable from "./components/Dashboard/AppointmentDateTable/AppointmentDateTable";
 import Dashboard from "./components/Dashboard/Dashboard/Dashboard";
 import Home from "./components/Home/Home/Home";
 import Login from "./components/Login/Login/Login";
@@ -29,10 +30,10 @@ function App() {
           <PrivateRoute path="/appointment">
             <Appointment />
           </PrivateRoute>
-          <Route path="/dashboard">
+          <PrivateRoute path="/dashboard">
             <Dashboard />
-          </Route>
-          <Route path="allPatients">
+          </PrivateRoute>
+          <Route path="/allPatients">
             <AllPatients></AllPatients>
           </Route>
           <Route path="/addDoctor">
